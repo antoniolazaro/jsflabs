@@ -1,0 +1,54 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<f:loadBundle basename="resources.application" var="msg" />
+
+<h:head>
+	<title><h:outputText value="#{msg.welcomeTitle}" /></title>
+</h:head>
+
+<h:body>
+	<h3>
+		<h:outputText value="#{msg.welcomeHeading}" />
+	</h3>
+	<p>
+		<h:outputText value="#{msg.welcomeMessage}" />
+	</p>
+	
+	<h:form>
+		Dia 1:
+		<ol>
+			<li>
+			  <h:outputLabel value="Primeiro MBean:" for="botaoPrimeiroMBean" />
+			  <h:commandButton id="botaoPrimeiroMBean" value="Primeiro MBean" action="dia1/primeiroManagedBean"/>
+			</li>
+			<li>
+			  <h:outputLabel value="Exibir Arvore de componentes:" for="exibirAvoreComponentes" />
+			  <h:commandButton id="exibirAvoreComponentes" value="Exibir Arvore de componentes" action="dia1/exibirArvoreComponentes"/>
+			</li>
+			<li>
+			  <h:outputLabel value="Request Scope Teste:" for="requestScopeTest" />
+			  <h:commandButton id="requestScopeTest" value="Request Scope Teste" action="dia1/requestScopeManagedBean."/>
+			</li>
+			<li>
+			  <h:outputLabel value="View Scope Teste:" for="viewScopeTest" />
+			  <h:commandButton id="viewScopeTest" value="View Scope Teste" action="dia1/viewScopeManagedBean"/>
+			</li>
+			<li>
+			  <h:outputLabel value="Session Scope Teste:" for="sessionScopeTest" />
+			  <h:commandButton id="sessionScopeTest" value="Session Scope Teste" action="dia1/sessionScopeManagedBean"/>
+			</li>
+			<li>
+			  <h:outputLabel value="Application Scope Teste:" for="applicationScopeTest" />
+			  <h:commandButton id="applicationScopeTest" value="Application Scope Teste" action="dia1/applicationScopeManagedBean"/>
+			</li>
+			<li>
+			  <h:outputLabel value="Converters Teste:" for="convertersTest" />
+			  <h:commandButton id="convertersTest" value="Converters Teste" action="dia1/converters"/>
+			</li>
+		</ol>
+	</h:form>
+</h:body>
+</html>

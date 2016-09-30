@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<f:loadBundle basename="resources.application" var="msg" />
+
+<h:head>
+	<title><h:outputText value="#{msg.welcomeTitle}" /></title>
+</h:head>
+
+<h:body>
+	<h:form>
+		<h:inputText value="#{viewScopeManagedBean.teste}" size="100"/> <br/>
+		<h:outputText value="#{viewScopeManagedBean.testeOutput}" size="100"/> <br/>
+		<h:commandButton value="Teste Escopo" action="#{viewScopeManagedBean.actionTeste}"/> <br/>
+		<h:selectOneMenu>
+			<f:selectItem itemLabel="Selecione" itemValue="Selecione"/>
+			<f:selectItem itemLabel="Sim" itemValue="Sim"/>
+			<f:selectItem itemLabel="Não" itemValue="não"/>
+		</h:selectOneMenu><br/>
+		<h:commandButton value="Encerrar Sessão" action="#{viewScopeManagedBean.actionEncerrarSessao}" /><br/>
+		<br/><br/>
+		<h:commandButton id="voltarButton" value="Voltar index" action="/index"/>
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<f:loadBundle basename="resources.application" var="msg" />
+
+<h:head>
+	<title><h:outputText value="#{msg.welcomeTitle}" /></title>
+</h:head>
+
+<h:body>
+	<h:form id="formularioArvoreComponentes">
+		<h:commandButton id="commandButton" value="Exibir árvore de componentes" action="#{exibirArvoreComponentesManagedBean.actionExibirConteudoArvore}"/>
+		<br/><br/>
+		Componentes:<h:outputText id="componentesText" value="#{exibirArvoreComponentesManagedBean.componentesView}" escape="false"/>
+		
+		<br/><br/>
+		<h:commandButton id="voltarButton" value="Voltar index" action="/index"/>
+	</h:form>
+</h:body>
+</html>
