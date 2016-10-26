@@ -1,0 +1,99 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<f:loadBundle basename="resources.application" var="msg" />
+
+<h:head>
+	<title><h:outputText value="#{msg.welcomeTitle}" /></title>
+</h:head>
+
+<h:body>
+	<h:form id="formValidator">
+	
+		<h:outputLabel value="Mensagem geral (h:messages)" for="mensagemValidacao" />
+		<h:messages id="mensagemValidacao"/>
+		
+		<br/><br/><br/>
+		<ul>
+			<li>Default:
+				<ul>
+					<li>
+						<h:outputLabel value="Required : " for="validatorString" />
+						<h:inputText id="validatorString" value="#{validatorsManagedBean.texto}" required="true" /> 
+					</li>
+					<li>
+						<h:outputLabel value="Required custom message: " for="validatorString1" />
+						<h:inputText id="validatorString1" value="#{validatorsManagedBean.texto1}" 
+						required="true" requiredMessage="Custom validator message" /> 
+					</li>
+					<li>
+						<h:outputLabel value="Required tag f:validateRequired: " for="validatorString2" />
+						<h:inputText id="validatorString2" value="#{validatorsManagedBean.texto2}"> 
+							<f:validateRequired />
+						</h:inputText>
+						<div>Conteúdo <br/>
+							Para usar f:validateRequired  é necessário configurar context-param no web.xml:<br/>
+							javax.faces.VALIDATE_EMPTY_FIELDS: true
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>Outros validadores:
+				<ul>
+					<li>
+						<h:outputLabel value="Long Range (0 - 3) : " for="longRange" />
+						<h:inputText id="longRange" value="#{validatorsManagedBean.numero}">
+							<f:validateLongRange minimum="0" maximum="3"/>
+						</h:inputText> 
+					</li>
+					<li>
+						<h:outputLabel value="Double Range (2.1 - 3.2) : " for="doubleRange" />
+						<h:inputText id="doubleRange" value="#{validatorsManagedBean.numero2}">
+							<f:validateDoubleRange minimum="2.1" maximum="3.2"/>
+						</h:inputText> 
+					</li>
+					<li>
+						<h:outputLabel value="Length (3 - 10) : " for="length" />
+						<h:inputText id="length" value="#{validatorsManagedBean.textoLength}">
+							<f:validateLength minimum="3" maximum="10"/>
+						</h:inputText> 
+					</li>
+					<li>
+						<h:outputLabel value="Regex e-mail: " for="regex" />
+						<h:inputText id="regex" value="#{validatorsManagedBean.textoRegex}">
+							<f:validateRegex pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"/>
+						</h:inputText> 
+					</li>
+				</ul>
+			</li>
+			<li>h:message:
+				<ul>
+					<li>
+						<h:outputLabel value="Message Custom para componente : " for="message" />
+						<h:inputText id="message" value="#{validatorsManagedBean.texto}" required="true"/>
+						<h:message for="message" style="color:red"/>
+					</li>
+					<li>
+						<h:outputLabel value="Message Custom para componente com detail : " for="message2" />
+						<h:inputText id="message2" value="#{validatorsManagedBean.texto2}" required="true"/>
+						<h:message for="message2" style="color:red" showSummary="true" showDetail="true" />
+					</li>
+					<li>
+						<h:outputLabel value="Message Custom para componente arquivo properties : " for="messageProperties" />
+						<h:inputText id="messageProperties" value="#{validatorsManagedBean.texto2}" required="true"
+						requiredMessage="#{msg.customizada}"/>
+					</li>
+				</ul>
+			</li>
+		</ul>		
+		 		
+		<br/><br/>
+		<h:commandButton value="Teste Validator Outros" action="#{validatorsManagedBean.actionTeste}"/>
+		<br/><br/>
+		<h:commandButton id="voltarButton" value="Voltar index" action="/index"/>
+	</h:form>
+</h:body>
+</html>

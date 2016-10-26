@@ -1,0 +1,69 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<f:loadBundle basename="resources.application" var="msg" />
+
+<h:head>
+	<title><h:outputText value="#{msg.welcomeTitle}" /></title>
+</h:head>
+
+<h:body>
+	<h:form id="formValidator">
+	
+		<h:outputLabel value="Mensagem geral" for="mensagemValidacao" />
+		<h:messages id="mensagemValidacao"/>
+		
+		<br/><br/><br/>
+		<ul>
+			<li>INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL:
+				<ul>
+					<li>
+						<h:outputLabel value="javax.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL (mostrar resultado no log da console alterando web.xml): " for="validarEmptyString" />
+						<h:inputText id="validarEmptyString" value="#{beanValidatorManagedBean.texto}" /> 
+					</li>
+				</ul>
+			</li>
+		</ul>	
+		<ul>
+			<li>Bean Validator (model Aluno):
+				<ul>
+					<li>
+						<h:outputLabel value="Nome: " for="nome" />
+						<h:inputText id="nome" value="#{beanValidatorManagedBean.aluno.nome}" /> 
+					</li>
+					<li>
+						<h:outputLabel value="Cidade (desabilitando) " for="nome2" />
+						<h:inputText id="nome2" value="#{beanValidatorManagedBean.aluno.cidade}">
+							<f:validateBean disabled="true"/>
+						</h:inputText> 
+					</li>
+					<li>
+						<h:outputLabel value="AssertTrue: " for="assertTrue" />
+						<h:inputText id="assertTrue" value="#{beanValidatorManagedBean.aluno.testeAssertTrue}" /> 
+					</li>
+					<li>
+						<h:outputLabel value="AssertFalse: " for="assertFalse" />
+						<h:inputText id="assertFalse" value="#{beanValidatorManagedBean.aluno.testeAssertFalse}" /> 
+					</li>
+					<li>
+						<h:outputLabel value="DecimalMin " for="decimalMin" />
+						<h:inputText id="decimalMin" value="#{beanValidatorManagedBean.aluno.decimalMin}" /> 
+					</li>
+					<li>
+						<h:outputLabel value="DecimalMax: " for="decimalMax" />
+						<h:inputText id="decimalMax" value="#{beanValidatorManagedBean.aluno.decimalMax}" /> 
+					</li>
+				</ul>
+			</li>
+		</ul>	
+		 		
+		<br/><br/>
+		<h:commandButton value="Teste Bean Validator" action="#{beanValidatorManagedBean.actionTeste}"/>
+		<br/><br/>
+		<h:commandButton id="voltarButton" value="Voltar index" action="/index"/>
+	</h:form>
+</h:body>
+</html>

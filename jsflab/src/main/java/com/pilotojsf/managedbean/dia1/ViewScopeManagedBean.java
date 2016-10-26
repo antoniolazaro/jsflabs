@@ -1,15 +1,15 @@
-package com.pilotojsf.dia1;
+package com.pilotojsf.managedbean.dia1;
 
 import java.io.Serializable;
 
-import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 
 import com.pilotojsf.ManagedBeanUtil;
 
-@ManagedBean(name="applicationScopeManagedBean")
-@ApplicationScoped
-public class ApplicationScopeManagedBean implements Serializable {
+@ManagedBean(name="viewScopeManagedBean")
+@ViewScoped
+public class ViewScopeManagedBean implements Serializable {
 
 	private String teste;
 	private String testeOutput;
@@ -30,9 +30,8 @@ public class ApplicationScopeManagedBean implements Serializable {
 		this.testeOutput = testeOutput;
 	}
 
-	public String actionTeste() {
+	public void actionTeste() {
 		testeOutput = "Você digitou: "+teste;
-		return "backToApplicationScopeManagedBean";
 	}
 	
 	public void actionEncerrarSessao(){

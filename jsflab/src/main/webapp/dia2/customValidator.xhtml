@@ -1,0 +1,58 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<f:loadBundle basename="resources.application" var="msg" />
+
+<h:head>
+	<title><h:outputText value="#{msg.welcomeTitle}" /></title>
+</h:head>
+
+<h:body>
+	<h:form id="formValidator">
+	
+		<h:outputLabel value="Mensagem geral" for="mensagemValidacao" />
+		<h:messages id="mensagemValidacao"/>
+		
+		<br/><br/><br/>
+		
+		<ul>
+			<li>Custom Validator
+				<ul>
+					<li>
+						<h:outputLabel value="Email: " for="email" />
+						<h:inputText id="email" value="#{customValidatorManagedBean.aluno.email}">
+							<f:validator validatorId="piloto.EmailValidator"/>
+						</h:inputText> 
+					</li>
+					<li>
+						<h:outputLabel value="Data Inicio " for="dataInicio" />
+						<h:inputText id="dataInicio" value="#{customValidatorManagedBean.aluno.dataInicioCurso}">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+							<f:validator validatorId="piloto.ParametroValidator"/>
+						</h:inputText> 
+					</li>
+					<li>
+						<h:outputLabel value="Data Fim " for="dataFim" />
+						<h:inputText id="dataFim" value="#{customValidatorManagedBean.aluno.dataFimCurso}">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+							<f:validator validatorId="piloto.ParametroValidator"/>
+						</h:inputText> 
+					</li>
+					<li>
+						<h:outputLabel value="Primo: " for="primo" />
+						<h:inputText id="primo" value="#{customValidatorManagedBean.aluno.codigo}" /> 
+					</li>
+				</ul>
+			</li>
+		</ul>	
+		 		
+		<br/><br/>
+		<h:commandButton value="Teste Bean Validator" action="#{customValidatorManagedBean.actionTeste}"/>
+		<br/><br/>
+		<h:commandButton id="voltarButton" value="Voltar index" action="/index"/>
+	</h:form>
+</h:body>
+</html>

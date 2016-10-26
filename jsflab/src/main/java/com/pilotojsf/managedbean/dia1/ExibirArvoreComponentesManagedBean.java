@@ -1,4 +1,4 @@
-package com.pilotojsf.dia1;
+package com.pilotojsf.managedbean.dia1;
 
 import java.io.Serializable;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.pilotojsf.custom.converter;
+package com.pilotojsf.converter.custom;
 
 import java.net.URI;
 import java.net.URISyntaxException;
