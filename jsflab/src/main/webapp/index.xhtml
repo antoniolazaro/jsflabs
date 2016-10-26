@@ -30,19 +30,19 @@
 			</li>
 			<li>
 			  <h:outputLabel value="Request Scope Teste:" for="requestScopeTest" />
-			  <h:commandButton id="requestScopeTest" value="Request Scope Teste" action="dia1/requestScopeManagedBean."/>
+			  <h:commandButton id="requestScopeTest" value="Request Scope Teste" action="dia1/scope/requestScopeManagedBean."/>
 			</li>
 			<li>
 			  <h:outputLabel value="View Scope Teste:" for="viewScopeTest" />
-			  <h:commandButton id="viewScopeTest" value="View Scope Teste" action="dia1/viewScopeManagedBean"/>
+			  <h:commandButton id="viewScopeTest" value="View Scope Teste" action="dia1/scope/viewScopeManagedBean"/>
 			</li>
 			<li>
 			  <h:outputLabel value="Session Scope Teste:" for="sessionScopeTest" />
-			  <h:commandButton id="sessionScopeTest" value="Session Scope Teste" action="dia1/sessionScopeManagedBean"/>
+			  <h:commandButton id="sessionScopeTest" value="Session Scope Teste" action="dia1/scope/sessionScopeManagedBean"/>
 			</li>
 			<li>
 			  <h:outputLabel value="Application Scope Teste:" for="applicationScopeTest" />
-			  <h:commandButton id="applicationScopeTest" value="Application Scope Teste" action="dia1/applicationScopeManagedBean"/>
+			  <h:commandButton id="applicationScopeTest" value="Application Scope Teste" action="dia1/scope/applicationScopeManagedBean"/>
 			</li>
 			<li>
 			  <h:outputLabel value="Converters Teste:" for="convertersTest" />
@@ -53,15 +53,19 @@
 		<ol>
 			<li>
 			  <h:outputLabel value="Validators:" for="validatorMbean" />
-			  <h:commandButton id="validatorMbean" value="Validators" action="dia2/validators"/>
+			  <h:commandButton id="validatorMbean" value="Validators" action="dia2/validator/validators"/>
 			</li>
 			<li>
 			  <h:outputLabel value="Bean Validator:" for="beanValidator" />
-			  <h:commandButton id="beanValidator" value="Bean Validator" action="dia2/beanValidator"/>
+			  <h:commandButton id="beanValidator" value="Bean Validator" action="dia2/validator/beanValidator"/>
 			</li>
 			<li>
 			  <h:outputLabel value="Custom Validator:" for="customValidator" />
-			  <h:commandButton id="customValidator" value="Custom Validator" action="dia2/customValidator"/>
+			  <h:commandButton id="customValidator" value="Custom Validator" action="dia2/validator/customValidator"/>
+			</li>
+			<li>
+			  <h:outputLabel value="Navigation:" for="navigation" />
+			  <h:commandButton id="navigation" value="Navigation" action="dia2/navigator/navigation"/>
 			</li>
 		</ol>
 	</h:form>

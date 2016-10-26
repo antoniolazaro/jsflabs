@@ -1,4 +1,4 @@
-package com.pilotojsf.managedbean.dia2;
+package com.pilotojsf.managedbean.dia2.validator;
 
 import java.io.Serializable;
 import java.util.Date;

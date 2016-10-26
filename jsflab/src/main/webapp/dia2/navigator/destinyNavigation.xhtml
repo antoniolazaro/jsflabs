@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<f:loadBundle basename="resources.application" var="msg" />
+
+<h:head>
+	<title><h:outputText value="#{msg.welcomeTitle}" /></title>
+</h:head>
+
+<h:body>
+	<h:form id="formValidator">
+	
+		<h:outputLabel value="Mensagem geral" for="mensagemValidacao" />
+		<h:messages id="mensagemValidacao"/>
+		<br/><br/>
+		Navegação realizada com sucesso!
+		<br/><br/>
+		<h:commandButton id="voltarButton" value="Voltar Navigation" action="navigation"/>
+	</h:form>
+</h:body>
+</html>

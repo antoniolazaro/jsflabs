@@ -1,4 +1,4 @@
-package com.pilotojsf.managedbean.dia2;
+package com.pilotojsf.managedbean.dia2.validator;
 
 import java.io.Serializable;
 
@@ -8,11 +8,10 @@ import javax.faces.bean.ViewScoped;
 
 import com.pilotojsf.managedbean.dia2.model.AlunoModel;
 
-@ManagedBean(name="beanValidatorManagedBean")
+@ManagedBean(name="customValidatorManagedBean")
 @ViewScoped
-public class BeanValidatorManagedBean implements Serializable {
+public class CustomValidatorManagedBean implements Serializable {
 
-	private String texto;
 	private AlunoModel aluno;
 	
 	@PostConstruct
@@ -21,15 +20,7 @@ public class BeanValidatorManagedBean implements Serializable {
 	}
 	
 	public void actionTeste(){
-		System.out.println("conteudo da variavel texto -> "+texto);
-	}
-
-	public String getTexto() {
-		return texto;
-	}
-
-	public void setTexto(String texto) {
-		this.texto = texto;
+		System.out.println("teste...");
 	}
 
 	public AlunoModel getAluno() {

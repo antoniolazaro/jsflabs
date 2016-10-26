@@ -1,4 +1,4 @@
-package com.pilotojsf.managedbean.dia1;
+package com.pilotojsf.managedbean.dia1.scope;
 
 import java.io.Serializable;
 

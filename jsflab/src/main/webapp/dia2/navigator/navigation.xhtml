@@ -1,0 +1,74 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<f:loadBundle basename="resources.application" var="msg" />
+
+<h:head>
+	<title><h:outputText value="#{msg.welcomeTitle}" /></title>
+</h:head>
+
+<h:body>
+	<h:form id="formValidator">
+	
+		<h:outputLabel value="Mensagem geral" for="mensagemValidacao" />
+		<h:messages id="mensagemValidacao"/>
+		
+		<ul>Navegação Implicita (usa convenção do nome do arquivo):
+			<li><h:commandButton value="Command Button Navigation" action="destinyNavigation"/></li>
+			<li><h:link outcome="destinyNavigation"> <h:outputText value="Link Navigation"/> </h:link></li>			
+			<li><h:commandLink value="Command Link Navigation" action="destinyNavigation"/></li>
+			<br />
+			<li><h:commandButton value="Command Button Navigation Outcome inválido" action="destinyNavigationWrong"/></li>
+			<li><h:link outcome="destinyNavigationWrong"> <h:outputText value="Link navigation outcome inválido"/> </h:link></li>
+			<li><h:commandLink value="Command Link Navigation Outcome inválido" action="destinyNavigationWrong"/></li>
+		</ul>
+		<br />
+		<ul>Navegação Explicita (não usa convenção do nome do arquivo):
+			<li><h:commandButton value="Command Button Navigation" action="nextPage"/></li>
+			<li><h:link outcome="nextPage"> <h:outputText value="Link Navigation"/> </h:link></li>			
+			<li><h:commandLink value="Command Link Navigation" action="nextPage"/></li>
+			<br />
+			<li><h:commandButton value="Command Button Navigation Outcome inválido no faces-config.xml" action="nextPageWrong"/></li>
+			<li><h:link outcome="nextPageWrong"> <h:outputText value="Link navigation outcome inválido no faces-config.xml"/> </h:link></li>
+			<li><h:commandLink value="Command Link Navigation Outcome inválido no faces-config.xml" action="nextPageWrong"/></li>
+			<br />
+			<li><h:commandButton value="Command Button Navigation Outcome inválido" action="nextPageWrong2"/></li>
+			<li><h:link outcome="nextPageWrong2"> <h:outputText value="Link navigation outcome inválido"/> </h:link></li>
+			<li><h:commandLink value="Command Link Navigation Outcome inválido" action="nextPageWrong2"/></li>
+		</ul>
+		<ul>
+			<li><h:link outcome="nextPageWrong2"> <h:outputText value="Link não tem action. Portanto não vai no managedBean"/> </h:link></li>
+		</ul>
+		<br/>
+		<ul>Navegação Implicita no Managed Bean:
+			<li><h:commandButton value="Navegação Implicita no Managed Bean:" action="#{navigatorManagedBean.navegacaoImplicita}"/></li>			
+			<li><h:commandLink value="Navegação Implicita no Managed Bean:" action="#{navigatorManagedBean.navegacaoImplicita}"/></li>
+			<br />
+			<li><h:commandButton value="Navegação Implicita no Managed Bean Outcome inválido" action="#{navigatorManagedBean.navegacaoImplicitaErrada}"/></li>
+			<li><h:commandLink value="Navegação Implicita no Managed Bean Outcome inválido" action="#{navigatorManagedBean.navegacaoImplicitaErrada}"/></li>
+		</ul>
+		<br />
+		<ul>Navegação Explicita no Managed Bean:
+			<li><h:commandButton value="Navegação Explicita no Managed Bean:" action="#{navigatorManagedBean.navegacaoExplicita}"/></li>
+			<li><h:commandLink value="Navegação Explicita no Managed Bean:" action="#{navigatorManagedBean.navegacaoExplicita}"/></li>
+			<br />
+			<li><h:commandButton value="Navegação Explicita no Managed Bean Outcome inválido no faces-config.xml" action="#{navigatorManagedBean.navegacaoExplicitaErradaFaces}"/></li>
+			<li><h:commandLink value="Navegação Explicita no Managed Bean Outcome inválido no faces-config.xml" action="#{navigatorManagedBean.navegacaoExplicitaErradaFaces}"/></li>
+			<br />
+			<li><h:commandButton value="Navegação Explicita no Managed Bean Outcome inválido" action="#{navigatorManagedBean.navegacaoExplicitaErrada}"/></li>
+			<li><h:commandLink value="Navegação Explicita no Managed Bean Outcome inválido" action="#{navigatorManagedBean.navegacaoExplicitaErrada}"/></li>
+		</ul>
+		<br />
+		
+		<ul>Navegação dinâmica:
+			<h:inputText id="codigo" value="#{navigatorManagedBean.codigo}" />
+			<li><h:commandButton value="Command Button Navigation" action="#{navigatorManagedBean.navegacaoCondicionalManagedBean}"/></li>			
+		</ul>
+		<br/><br/>
+		<h:commandButton id="voltarButton" value="Voltar index" action="/index"/>
+	</h:form>
+</h:body>
+</html>
