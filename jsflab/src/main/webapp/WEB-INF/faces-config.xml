@@ -3,12 +3,17 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
 	version="2.2">
+
 	<application>
 		<message-bundle>resources.application</message-bundle>
 		<locale-config>
 			<default-locale>pt-BR</default-locale>
 		</locale-config>
 	</application>
+
+	<lifecycle>
+		<phase-listener>com.pilotojsf.managedbean.dia2.event.PhaseListenerSample</phase-listener>
+	</lifecycle>
 
 	<navigation-rule>
 		<from-view-id>/dia2/navigator/navigation.xhtml</from-view-id>

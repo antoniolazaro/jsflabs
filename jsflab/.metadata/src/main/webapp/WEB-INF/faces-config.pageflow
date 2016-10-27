@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14751993286560" configfile="/jsflab/src/main/webapp/WEB-INF/faces-config.xml"/>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14751993286560" configfile="/jsflab/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="dia2/navigator/navigation.xhtml" x="122" y="370" id="pf14775315807890" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14775315807901 pf14775315807902" path="/dia2/navigator/navigation.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="dia2/navigator/destinyNavigation.xhtml" x="338" y="178" id="pf14775315807903" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14775315807901" path="/dia2/navigator/destinyNavigation.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="dia2/navigator/destinyNavigationWrong.xhtml" x="338" y="562" id="pf14775315807904" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf14775315807902" path="/dia2/navigator/destinyNavigationWrong.xhtml"/>
+  <links id="pf14775315807901" target="pf14775315807903" source="pf14775315807890" outcome="nextPage"/>
+  <links id="pf14775315807902" target="pf14775315807904" source="pf14775315807890" outcome="nextPageWrong"/>
+</pageflow:Pageflow>
