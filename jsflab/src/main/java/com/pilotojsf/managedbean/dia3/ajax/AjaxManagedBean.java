@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.faces.event.ValueChangeEvent;
 
 @ManagedBean(name="ajaxManagedBean")
 @ViewScoped
@@ -23,6 +24,12 @@ public class AjaxManagedBean implements Serializable {
 	}
 	public void setTexto2(String texto2) {
 		this.texto2 = texto2;
+	}
+	
+	public void valueChangeListener(ValueChangeEvent valueChangeEvent){
+		System.out.println("Chamou valueChangeListener (old value)..."+valueChangeEvent.getOldValue());
+		System.out.println("Chamou valueChangeListener (new value)..."+valueChangeEvent.getNewValue());
+		texto = "Novo Valor selecionado = "+ valueChangeEvent.getNewValue();
 	}
 	
 	public void action(){
