@@ -1,4 +1,4 @@
-package com.pilotojsf.managedbean.dia2.event;
+package com.pilotojsf.managedbean.dia3.event;
 
 import javax.faces.context.FacesContext;
 import javax.faces.event.AbortProcessingException;

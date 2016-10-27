@@ -1,4 +1,4 @@
-package com.pilotojsf.managedbean.dia2.event;
+package com.pilotojsf.managedbean.dia3.event;
 
 import java.io.Serializable;
 

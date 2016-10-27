@@ -1,4 +1,4 @@
-package com.pilotojsf.managedbean.dia2.event;
+package com.pilotojsf.managedbean.dia3.event;
 
 import javax.faces.event.PhaseEvent;
 import javax.faces.event.PhaseId;
