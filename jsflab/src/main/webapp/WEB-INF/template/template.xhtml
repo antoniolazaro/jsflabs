@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <h:head>
+	<h:outputStylesheet name="common-style.css" library="css" />
+    </h:head>
+
+    <h:body>
+
+	<div id="page">
+
+	    <div id="headerDiv">
+			<ui:insert name="header" >
+			  <ui:include src="/WEB-INF/template/common/header.xhtml" />
+			</ui:insert>
+	    </div>
+
+	    <div id="contentDiv">
+		  	<ui:insert name="content" >
+		 	  <ui:include src="/WEB-INF/template/common/content.xhtml" />
+		 	  <br />
+		 	  
+		   	</ui:insert>
+	    </div>
+	    
+		<h:link outcome="/index">Voltar</h:link>
+	    <br />
+	    <div id="footerDiv">
+	    	<ui:insert name="footer" >
+	    	  <ui:include src="/WEB-INF/template/common/footer.xhtml" />
+	    	</ui:insert>
+    	</div>
+
+        </div>
+
+    </h:body>
+</html>

@@ -1,0 +1,17 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:ui="http://java.sun.com/jsf/facelets">
+ 
+    <div class="row">
+        <h4>#{carro.marca} - #{carro.nome}</h4>
+    </div>
+ 
+    <div class="row">
+        <table class="table table-striped">
+            <ui:repeat value="#{carro.modelos}" var="modelo">
+                <tr>
+                    <td>#{modelo}</td>
+                </tr>
+            </ui:repeat>
+        </table>
+    </div>
+</ui:composition>

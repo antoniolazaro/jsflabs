@@ -71,17 +71,40 @@
 		Dia 3:
 		<ol>
 			<li>
-			  <h:outputLabel value="Event:" for="event" />
-			  <h:commandButton id="event" value="Event" action="dia3/event/event"/>
+				  <h:outputLabel value="Event:" for="event" />
+				  <h:commandButton id="event" value="Event" action="dia3/event/event"/>
 			  <br />
 			  <li>
-			  <h:outputLabel value="Immediate:" for="immediate" />
-			  <h:commandButton id="immediate" value="Immediate" action="dia3/event/immediate"/>
+				  <h:outputLabel value="Immediate:" for="immediate" />
+				  <h:commandButton id="immediate" value="Immediate" action="dia3/event/immediate"/>
 			  </li>
 			</li>
 			<li>
 			  <h:outputLabel value="Ajax:" for="ajax" />
 			  <h:commandButton id="ajax" value="Ajax" action="dia3/ajax"/>
+			</li>
+		</ol>
+		Dia 4:
+		<ol>
+			<li>
+			  <h:outputLabel value="Facelets:" for="facelets" />
+			  <br />
+			  <h:commandButton id="facelets" value="Facelets default" action="dia4/facelets/default"/>
+			  <br />
+			  <h:commandButton value="Facelets custom" action="dia4/facelets/custom" />
+			  <br />
+			  <h:commandButton value="Parameters facelets" action="dia4/facelets/parameters" />
+			  <br />
+			  <h:commandButton value="Component Composition" action="dia4/facelets/demoComponentComposition" />
+			  <br />
+			  <h:commandButton value="Component Composition Errado" action="dia4/facelets/demoComponentCompositionWrong" />
+			</li>
+			<li>
+			  <h:outputLabel value="Primefaces:" for="primefaces" />
+			  <h:commandButton id="primefaces" value="Primefaces" action="dia4/primefaces/primefaces"/>
+			  <br />
+			  <h:outputLabel value="Primefaces Extensions:" for="primefacesExtensions" />
+			  <h:commandButton id="primefacesExtensions" value="Primefaces Extensions" action="dia4/primefaces/primefacesExtensions"/>
 			</li>
 		</ol>
 	</h:form>
