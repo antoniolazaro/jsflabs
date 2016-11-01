@@ -29,6 +29,7 @@
 					</li>
 				</ul>
 			</li>
+			 
 			<li>Convert Numbers (f:convertNumber)
 				<ul>
 					<li>
@@ -37,7 +38,7 @@
 						<f:convertNumber minFractionDigits="2"/>
 					</h:inputText>
 					</li>
-			
+					 
 					<li>
 					<h:outputLabel value="Converter Number (pattern, baseado em javax.text.DecimalFormat).Exemplo: #0.000:  " for="converterPattern" />
 					<h:inputText id="converterPattern" value="#{convertersManagedBean.numero2}"> 
@@ -55,9 +56,10 @@
 					<li>
 					<h:outputLabel value="Converter Number (currency. currency code é baseado na ISO-4217 https://en.wikipedia.org/wiki/ISO_4217): " for="converterCurrency" />
 					<h:inputText id="converterCurrency" value="#{convertersManagedBean.numero2}"> 
-						<f:convertNumber currencySymbol="$" currencyCode="GBP" type="currency" />
+						<f:convertNumber currencySymbol="$" currencyCode="BRL" type="currency" />
 					</h:inputText>
 					</li>
+					
 				</ul>
 			</li>
 			
@@ -75,11 +77,16 @@
 				<ul>
 					<li>
 					<h:inputText id="custom" value="#{convertersManagedBean.custom}" label="Custom:">
-						<f:converter converterId="com.pilotojsf.custom.converter.CustomConverter" />
+						<f:converter converterId="com.pilotojsf.converter.custom.CustomConverter" />
 				  	</h:inputText>
+				  	<br />
+				  	<h:inputText id="custom2" value="#{convertersManagedBean.custom}" label="Custom 2:" converter="com.pilotojsf.converter.custom.CustomConverter"
+				  	converterMessage="Erro de conversão customizado na tag." />
+				  	
 					</li>
 				</ul>
-			</li>			
+			</li>	
+			 	 
 		</ul>		
 		
 		<br/><br/>

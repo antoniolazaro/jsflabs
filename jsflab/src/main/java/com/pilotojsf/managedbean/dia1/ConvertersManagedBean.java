@@ -1,6 +1,7 @@
 package com.pilotojsf.managedbean.dia1;
 
 import java.io.Serializable;
+import java.net.URL;
 import java.util.Date;
 
 import javax.faces.bean.ManagedBean;
@@ -15,7 +16,7 @@ public class ConvertersManagedBean implements Serializable {
 	private Long numero1;
 	private Double numero2;
 	private Date date;
-	private String custom;
+	private URL custom;
 	
 	public void actionTeste(){
 		
@@ -61,11 +62,11 @@ public class ConvertersManagedBean implements Serializable {
 		this.date = date;
 	}
 
-	public String getCustom() {
+	public URL getCustom() {
 		return custom;
 	}
 
-	public void setCustom(String custom) {
+	public void setCustom(URL custom) {
 		this.custom = custom;
 	}
 }

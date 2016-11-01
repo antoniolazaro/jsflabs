@@ -1,7 +1,7 @@
 package com.pilotojsf.converter.custom;
 
-import java.net.URI;
-import java.net.URISyntaxException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
@@ -10,7 +10,7 @@ import javax.faces.convert.Converter;
 import javax.faces.convert.ConverterException;
 import javax.faces.convert.FacesConverter;
 
-@FacesConverter("com.pilotojsf.custom.converter.CustomConverter")
+@FacesConverter("com.pilotojsf.converter.custom.CustomConverter")
 public class CustomConverter implements Converter {
 
 	@Override
@@ -18,20 +18,22 @@ public class CustomConverter implements Converter {
 
 		StringBuilder url = new StringBuilder();
 
-		if (!value.startsWith("http://", 0)) {
-			url.append("http://");
-		}
+//		if (!value.startsWith("http://", 0)) {
+//			url.append("http://");
+//		}
 		url.append(value);
 
+		URL teste = null;
 		try {
-			new URI(url.toString());
-		} catch (URISyntaxException e) {
+			teste = new URL(url.toString());
+		} catch (MalformedURLException e) {
 			FacesMessage msg = new FacesMessage("Error converting URL", "Invalid URL format");
 			msg.setSeverity(FacesMessage.SEVERITY_ERROR);
+//			facesContext.addMessage("mensagemValidacao",msg);
 			throw new ConverterException(msg);
 		}
 
-		return url.toString();
+		return teste;
 	}
 
 	@Override
