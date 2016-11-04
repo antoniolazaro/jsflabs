@@ -17,7 +17,9 @@
 		<h:messages id="mensagemValidacao"/>
 		
 		<br/><br/><br/>
+		<!-- 
 		<ul>
+		
 			<li>INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL:
 				<ul>
 					<li>
@@ -27,6 +29,7 @@
 				</ul>
 			</li>
 		</ul>	
+		  -->
 		<ul>
 			<li>Bean Validator (model Aluno):
 				<ul>
@@ -34,28 +37,39 @@
 						<h:outputLabel value="Nome: " for="nome" />
 						<h:inputText id="nome" value="#{beanValidatorManagedBean.aluno.nome}" /> 
 					</li>
+					 
+					<li>
+						<h:outputLabel value="Codigo " for="codigo" />
+						<h:inputText id="codigo" value="#{beanValidatorManagedBean.aluno.codigo}" /> 
+					</li>
+					
 					<li>
 						<h:outputLabel value="Cidade (desabilitando) " for="nome2" />
 						<h:inputText id="nome2" value="#{beanValidatorManagedBean.aluno.cidade}">
 							<f:validateBean disabled="true"/>
 						</h:inputText> 
 					</li>
+					
 					<li>
 						<h:outputLabel value="AssertTrue: " for="assertTrue" />
 						<h:inputText id="assertTrue" value="#{beanValidatorManagedBean.aluno.testeAssertTrue}" /> 
 					</li>
+					
 					<li>
 						<h:outputLabel value="AssertFalse: " for="assertFalse" />
 						<h:inputText id="assertFalse" value="#{beanValidatorManagedBean.aluno.testeAssertFalse}" /> 
 					</li>
+					
 					<li>
 						<h:outputLabel value="DecimalMin " for="decimalMin" />
 						<h:inputText id="decimalMin" value="#{beanValidatorManagedBean.aluno.decimalMin}" /> 
 					</li>
+					
 					<li>
 						<h:outputLabel value="DecimalMax: " for="decimalMax" />
 						<h:inputText id="decimalMax" value="#{beanValidatorManagedBean.aluno.decimalMax}" /> 
 					</li>
+					
 				</ul>
 			</li>
 		</ul>	

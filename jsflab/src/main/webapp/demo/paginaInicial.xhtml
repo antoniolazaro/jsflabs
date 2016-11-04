@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:demo="http://java.sun.com/jsf/composite/demo">
+
+<h:body>
+
+	<h1>App Demo pagina Inicial JSF 2.0</h1>
+
+	<h:messages style="color:red;" />
+	
+	<h:form id="formDemo">
+		<p:focus for="formDemo:buscaLogin" />
+		<h:outputText id="mensagemBemVindo"
+			value="Bem vindo usuário: #{loginManagedBean.usuario.login}" />
+		<br /><br />
+		<p:outputLabel value="Login:" />
+		<p:inputText id="buscaLogin"
+			value="#{loginManagedBean.usuarioPesquisado.login}" />
+		<br /><br/>
+		<p:commandButton id="busca" action="#{loginManagedBean.buscar}" value="Buscar login" update="@form"  />
+		
+		<br/><br/><br/>
+		<p:outputLabel value="Login:" rendered="#{loginManagedBean.usuarioEncontrado}"/>
+		<p:inputText id="loginEncontrado" readonly="true" rendered="#{loginManagedBean.usuarioEncontrado}"
+			value="#{loginManagedBean.usuarioPesquisado.login}" />
+		<br/>
+		<p:outputLabel value="Nome:" rendered="#{loginManagedBean.usuarioEncontrado}"/>
+		<p:inputText id="nome"
+			value="#{loginManagedBean.usuarioPesquisado.nome}" rendered="#{loginManagedBean.usuarioEncontrado}" />
+		<br/>
+		<p:outputLabel value="Senha:" rendered="#{loginManagedBean.usuarioEncontrado}"/>
+		<p:inputText id="senhaEncontrada" rendered="#{loginManagedBean.usuarioEncontrado}"
+			value="#{loginManagedBean.usuarioPesquisado.senha}" />
+			
+		<br/><br/>
+		<br /><br/>
+		<p:commandButton id="atualizar" action="#{loginManagedBean.atualizarDados}" value="Atualizar dados..." update="@form"  />
+		<h:link outcome="novoUsuario" value="Novo usuário"  />
+		<br /><br/>
+		<h:commandButton  value="Listagem usuário" action="#{loginManagedBean.navegarListagem}">
+			<f:setPropertyActionListener value="#{loginManagedBean.usuarioPesquisado}" target="#{usuarioManagedBean.usuario}"/>
+		</h:commandButton>
+		
+	</h:form>
+</h:body>
+
+</html>

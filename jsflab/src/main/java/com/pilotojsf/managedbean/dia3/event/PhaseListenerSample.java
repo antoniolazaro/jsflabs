@@ -13,8 +13,7 @@ public class PhaseListenerSample implements PhaseListener{
 	
 	@Override
 	public void beforePhase(PhaseEvent event) {
-		System.out.println("Antes da fase...");
-		
+		System.out.println("Antes da fase...");		
 	}
 	
 	@Override

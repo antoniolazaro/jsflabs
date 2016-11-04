@@ -16,8 +16,9 @@ public class AlunoModel implements Serializable{
 	private static final long serialVersionUID = 130510086061152700L;
 	
 	@Primo
+	@NotNull(message="Valor codigo não pode ser null...")
 	private Long codigo;
-	@NotNull(message="Valor nome não pode ser null...")
+	
 	private String nome;
 	private String cidade;
 	private Date dataNascimento;

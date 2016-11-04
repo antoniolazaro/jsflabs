@@ -3,20 +3,21 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
       xmlns:demo="http://java.sun.com/jsf/composite/demo">
 
     <h:body>
 
-    	<h1>Composite Components in JSF 2.0</h1>
+    	<h1>App Demo login JSF 2.0</h1>
 
 	<demo:register
-		loginLable="Name"
-		loginValue="#{compositeComponentManagedBean.name}"
-		senhaLable="E-mail"
-		senhaValue="#{compositeComponentManagedBean.email}"
+		loginLable="Login"
+		loginValue="#{loginManagedBean.usuario.login}"
+		senhaLable="Senha"
+		senhaValue="#{loginManagedBean.usuario.senha}"
 
 		registerButtonText="Register"
-		registerButtonAction="#{compositeComponentManagedBean.registerAction}"
+		registerButtonAction="#{loginManagedBean.login}"
 	 />
 
     </h:body>

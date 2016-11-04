@@ -27,17 +27,22 @@
 							<f:validator validatorId="piloto.EmailValidator"/>
 						</h:inputText> 
 					</li>
+					
 					<li>
-						<h:outputLabel value="Data Inicio " for="dataInicio" />
-						<h:inputText id="dataInicio" value="#{customValidatorManagedBean.aluno.dataInicioCurso}">
+						<h:outputLabel value="Data Inicio " for="inicio" />
+						<h:inputText id="inicio" value="#{customValidatorManagedBean.aluno.dataInicioCurso}">
 							<f:convertDateTime pattern="dd/MM/yyyy" />
+							<f:attribute name="inicio" value="01/05/2014" /> 
+							<f:attribute name="fim" value="30/08/2014"/>
 							<f:validator validatorId="piloto.ParametroValidator"/>
 						</h:inputText> 
 					</li>
 					<li>
-						<h:outputLabel value="Data Fim " for="dataFim" />
-						<h:inputText id="dataFim" value="#{customValidatorManagedBean.aluno.dataFimCurso}">
+						<h:outputLabel value="Data Fim " for="fim" />
+						<h:inputText id="fim" value="#{customValidatorManagedBean.aluno.dataFimCurso}">
 							<f:convertDateTime pattern="dd/MM/yyyy" />
+							<f:attribute name="inicio" value="01/05/2014" /> 
+							<f:attribute name="fim" value="30/08/2014"/>
 							<f:validator validatorId="piloto.ParametroValidator"/>
 						</h:inputText> 
 					</li>

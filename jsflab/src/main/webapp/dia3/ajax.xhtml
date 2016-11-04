@@ -19,20 +19,20 @@
 		
 		<ul>Ajax Demo
 			<h:form id="form1">
-				<li><h:selectOneMenu onchange="submit()"
+				<li><h:selectOneMenu onchange="submit()" 
 				valueChangeListener="#{ajaxManagedBean.valueChangeListener}">
 		   			<f:selectItem itemLabel="Brasil" itemValue="Brasil" />
 		   			<f:selectItem itemLabel="Argentina" itemValue="Argentina" />
 		   		</h:selectOneMenu>
 		   		</li>
-		   		<li><h:selectOneMenu>
-		   			<f:ajax listener="#{ajaxManagedBean.action}" render="@form"/>
+		   		<li><h:selectOneMenu > 
+		   			<f:ajax event="change" listener="#{ajaxManagedBean.action}" render="@form" />
 		   			<f:selectItem itemLabel="Brasil" itemValue="Brasil" />
 		   			<f:selectItem itemLabel="Argentina" itemValue="Argentina" />
 		   		</h:selectOneMenu>
 		   		</li>
 				<li><h:inputText value="#{ajaxManagedBean.texto2}">
-						<f:ajax listener="#{ajaxManagedBean.action}"/>
+						<f:ajax event="keydown" listener="#{ajaxManagedBean.action}" />
 					</h:inputText>
 				</li>
 				<li><h:commandButton value="Action" action="#{ajaxManagedBean.action}"/></li>

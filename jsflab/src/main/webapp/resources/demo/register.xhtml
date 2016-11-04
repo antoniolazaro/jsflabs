@@ -4,14 +4,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
 	xmlns:composite="http://java.sun.com/jsf/composite">
 
 <composite:interface>
 
-	<composite:attribute name="nameLable" />
-	<composite:attribute name="nameValue" />
-	<composite:attribute name="emailLable" />
-	<composite:attribute name="emailValue" />
+	<composite:attribute name="loginLable" />
+	<composite:attribute name="loginValue" />
+	<composite:attribute name="senhaLable" />
+	<composite:attribute name="senhaValue" />
 
 	<composite:attribute name="registerButtonText" />
 	<composite:attribute name="registerButtonAction"
@@ -23,19 +24,33 @@
 
 	<h:form>
 
-		<h:message for="textPanel" style="color:red;" />
+		<h:message id="mensagem" for="name" style="color:red;" />
+		<h:messages style="color:red;" />
 
-		<h:panelGrid columns="2" id="textPanel">
+		<p:panelGrid columns="2" id="textPanel">
+			#{cc.attrs.loginLable} :
+			<p:inputText id="name" value="#{cc.attrs.loginValue}" required="true" />
 
-			#{cc.attrs.nameLable} :
-			<h:inputText id="name" value="#{cc.attrs.nameValue}" />
+			#{cc.attrs.senhaLable} :
+			<p:password id="email" value="#{cc.attrs.senhaValue}" />
 
-			#{cc.attrs.emailLable} :
-			<h:inputText id="email" value="#{cc.attrs.emailValue}" />
+		</p:panelGrid>
 
-		</h:panelGrid>
+		<p:ajaxStatus style="display:block;margin-bottom:2em;height:24px;">
+			<f:facet name="default">
+				<h:outputText value="Status: StandBy" />
+			</f:facet>
 
-		<h:commandButton action="#{cc.attrs.registerButtonAction}"
+			<f:facet name="start">
+				<p:graphicImage name="/images/ajax-loader.gif" />
+			</f:facet>
+
+			<f:facet name="complete">
+				<h:outputText value="Status: Completed" />
+			</f:facet>
+		</p:ajaxStatus>
+
+		<p:commandButton action="#{cc.attrs.registerButtonAction}"
 			value="#{cc.attrs.registerButtonText}" />
 
 	</h:form>

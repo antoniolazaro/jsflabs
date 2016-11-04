@@ -40,11 +40,11 @@
 			<li><h:commandLink value="Command Link Navigation Outcome inválido" action="nextPageWrong2"/></li>
 		</ul>
 		<ul>
-			<li><h:link outcome="nextPageWrong2"> <h:outputText value="Link não tem action. Portanto não vai no managedBean"/> </h:link></li>
+			<li><h:link outcome="nextPageWrong2"> <h:outputText value="Link não tem action. Portanto não vai no managedBean" /> </h:link></li>
 		</ul>
 		<br/>
 		<ul>Navegação Implicita no Managed Bean:
-			<li><h:commandButton value="Navegação Implicita no Managed Bean:" action="#{navigatorManagedBean.navegacaoImplicita}"/></li>			
+			<li><h:commandButton value="Navegação Implicita no Managed Bean:" action="#{navigatorManagedBean.navegacaoImplicita}" /></li>			
 			<li><h:commandLink value="Navegação Implicita no Managed Bean:" action="#{navigatorManagedBean.navegacaoImplicita}"/></li>
 			<br />
 			<li><h:commandButton value="Navegação Implicita no Managed Bean Outcome inválido" action="#{navigatorManagedBean.navegacaoImplicitaErrada}"/></li>

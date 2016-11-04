@@ -15,7 +15,7 @@ import javax.validation.Payload;
 @Retention(RUNTIME)
 @Constraint(validatedBy = PrimoValidator.class)
 public @interface Primo {
-	String message() default "{piloto.Primo.message}"; 
+	String message() default "Campo deve ser preenchido com numero primo."; 
 	Class<?>[] groups() default {}; 
 	Class <? extends Payload >[] payload () default {}; 
 }

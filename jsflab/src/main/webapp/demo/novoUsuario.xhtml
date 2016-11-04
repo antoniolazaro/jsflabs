@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:demo="http://java.sun.com/jsf/composite/demo">
+
+<h:body>
+
+	<h1>App Demo novo usuário JSF 2.0</h1>
+
+	<h:messages style="color:red;" />
+	
+	<h:form id="formDemo">
+	
+		<p:focus for="loginEncontrado"/>
+		
+		<br/><br/><br/>
+		<p:outputLabel value="Login:" />
+		<p:inputText id="loginEncontrado" value="#{usuarioManagedBean.usuario.login}" />
+		<br/>
+		<p:outputLabel value="Nome:" />
+		<p:inputText id="nome" value="#{usuarioManagedBean.usuario.nome}"  />
+		<br/>
+		<p:outputLabel value="Senha:" />
+		<p:inputText id="senhaEncontrada"  value="#{usuarioManagedBean.usuario.senha}" />
+			
+		<br/><br/>
+		<br /><br/>
+		<p:commandButton id="salvar" action="#{usuarioManagedBean.salvar}" value="Salvar" update="@form"  />
+		
+	</h:form>
+</h:body>
+
+</html>

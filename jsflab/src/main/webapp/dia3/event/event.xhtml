@@ -39,7 +39,7 @@
 		<ul>ValueChangeEvent (classe)
 			<li>
 			<h:selectOneMenu onchange="submit()">
-	   			<f:valueChangeListener type="com.pilotojsf.managedbean.dia2.event.ValueChangeListenerSample" />
+	   			<f:valueChangeListener type="com.pilotojsf.managedbean.dia3.event.ValueChangeListenerSample" />
 	   			<f:selectItem itemLabel="Brasil" itemValue="Brasil" />
 	   			<f:selectItem itemLabel="Argentina" itemValue="Argentina" />
 	   		</h:selectOneMenu>
@@ -48,8 +48,8 @@
 		</ul>
 		<ul>PhaseListener
 			<li>
-			<h:commandButton value="Phase Listener" action="#{eventManagedBean.action}">
-				<f:phaseListener type="com.pilotojsf.managedbean.dia2.event.PhaseListenerSample"/>
+			<h:commandButton value="Phase Listener" action="#{eventManagedBean.action}" >
+				<f:phaseListener type="com.pilotojsf.managedbean.dia3.event.PhaseListenerSample"/>
 			</h:commandButton>
 	   		</li>
 		</ul>
